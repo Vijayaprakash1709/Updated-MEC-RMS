@@ -58,7 +58,7 @@ const [resProfile,setResProfile]=useState(null);
 
 // const CheckRollWithDb=async(roll)=>{
 // try{
-//  const temp=await axios.get(`http://10.167.1.2:1234/seminar/compare/${roll}`)
+//  const temp=await axios.get(`http://localhost:1234/seminar/compare/${roll}`)
 // //  alert(JSON.stringify(temp.data.results[0].number))
 //  if((temp.data.results[0].number)!=0){
 //   alert(finalArr.includes(roll))
@@ -82,7 +82,7 @@ const [resProfile,setResProfile]=useState(null);
 
 const CheckRollWithDb = async (roll) => {
   try {
-    const temp = await axios.get(`http://10.167.1.2:1234/seminar/compare/${roll}`);
+    const temp = await axios.get(`http://localhost:1234/seminar/compare/${roll}`);
 
     // console.log("Response from server:", temp.data);
 
@@ -119,7 +119,7 @@ const CheckRollWithDb = async (roll) => {
  label: val.faculty_id+'-'+val.faculty_name+'-'+val.dept,
  }));
 
- axios.get('http://10.167.1.2:1234/seminar/find')
+ axios.get('http://localhost:1234/seminar/find')
  .then((response) => {
  // console.log(response);
  setOptions(response.data.rows);
@@ -412,7 +412,7 @@ const CheckRollWithDb = async (roll) => {
  
  formData1.append('file',selectedFile1,formData.event_photo_1.concat('.jpg') );
  
- fetch('http://10.167.1.2:1234/ecr/upload1', {
+ fetch('http://localhost:1234/ecr/upload1', {
  method: 'POST',
  body: formData1,
  })
@@ -432,7 +432,7 @@ const CheckRollWithDb = async (roll) => {
  formData2.append('file', selectedFile2,formData.event_photo_2.concat('.jpg') );
  
  
- fetch('http://10.167.1.2:1234/ecr/upload1', {
+ fetch('http://localhost:1234/ecr/upload1', {
  method: 'POST',
  body: formData2,
  })
@@ -452,7 +452,7 @@ const CheckRollWithDb = async (roll) => {
 
  formData3.append('file', selectedFile3,formData.event_photo_3.concat('.jpg') );
 
- fetch('http://10.167.1.2:1234/ecr/upload1', {
+ fetch('http://localhost:1234/ecr/upload1', {
  method: 'POST',
  body: formData3,
  })
@@ -471,7 +471,7 @@ const CheckRollWithDb = async (roll) => {
  
 
  formData4.append('file', selectedFile4,formData.event_photo_4.concat('.jpg') );
- fetch('http://10.167.1.2:1234/ecr/upload1', {
+ fetch('http://localhost:1234/ecr/upload1', {
  method: 'POST',
  body: formData4,
  })
@@ -489,7 +489,7 @@ const CheckRollWithDb = async (roll) => {
  if (selectedFile5 ) {
  const formData5 = new FormData();
  formData5.append('file', selectedFile5,formData.event_photo_5.concat('.jpg'));
- fetch('http://10.167.1.2:1234/ecr/upload1', {
+ fetch('http://localhost:1234/ecr/upload1', {
  method: 'POST',
  body: formData5,
  })
@@ -517,7 +517,7 @@ const CheckRollWithDb = async (roll) => {
  
 
 
-  fetch('http://10.167.1.2:1234/ecr/uploadPdf', {
+  fetch('http://localhost:1234/ecr/uploadPdf', {
     method: 'POST',
     body: formData6,
   })
@@ -554,7 +554,7 @@ if (requestMail) {
  
 
 
-  fetch('http://10.167.1.2:1234/ecr/uploadrequestMail', {
+  fetch('http://localhost:1234/ecr/uploadrequestMail', {
     method: 'POST',
     body: formData6,
   })
@@ -592,7 +592,7 @@ if (acceptMail) {
  
 
 
-  fetch('http://10.167.1.2:1234/ecr/uploadacceptMail', {
+  fetch('http://localhost:1234/ecr/uploadacceptMail', {
     method: 'POST',
     body: formData6,
   })
@@ -631,7 +631,7 @@ if (resPerson) {
  
 
 
-  fetch('http://10.167.1.2:1234/ecr/uploadresPerson', {
+  fetch('http://localhost:1234/ecr/uploadresPerson', {
     method: 'POST',
     body: formData6,
   })
@@ -669,7 +669,7 @@ if (partiFeedback) {
  
 
 
-  fetch('http://10.167.1.2:1234/ecr/uploadpartiFeedback', {
+  fetch('http://localhost:1234/ecr/uploadpartiFeedback', {
     method: 'POST',
     body: formData6,
   })
@@ -707,7 +707,7 @@ if (resProfile) {
  
 
 
-  fetch('http://10.167.1.2:1234/ecr/uploadresProfile', {
+  fetch('http://localhost:1234/ecr/uploadresProfile', {
     method: 'POST',
     body: formData6,
   })
@@ -746,7 +746,7 @@ if (ppt) {
  
 
 
-  fetch('http://10.167.1.2:1234/ecr/uploadppt', {
+  fetch('http://localhost:1234/ecr/uploadppt', {
     method: 'POST',
     body: formData6,
   })
@@ -781,7 +781,7 @@ if (ppt) {
 try{
   // alert(Data.event_name)
   if(formData.event_photo_1.length<=1){
-    alert("Server is busy try again");
+    alert("Some error Occurs try again later");
   }
   else{
     try{
@@ -825,7 +825,7 @@ try{
  
  // event_photo_2: name2,
  // });
- // fetch('http://10.167.1.2:1234/ecr/upload1', {
+ // fetch('http://localhost:1234/ecr/upload1', {
  // method: 'POST',
  // body: formData2,
  // })
@@ -865,7 +865,7 @@ try{
  // event_photo_3: name3,
  // })
 
- // fetch('http://10.167.1.2:1234/ecr/upload1', {
+ // fetch('http://localhost:1234/ecr/upload1', {
  // method: 'POST',
  // body: formData3,
  // })
@@ -904,7 +904,7 @@ try{
 // ...formData,
 // event_photo_4: name4,
 // })
-// fetch('http://10.167.1.2:1234/ecr/upload1', {
+// fetch('http://localhost:1234/ecr/upload1', {
 // method: 'POST',
 // body: formData4,
 // })
@@ -946,7 +946,7 @@ try{
  
  // event_photo_5: name5,
  // });
- // fetch('http://10.167.1.2:1234/ecr/upload1', {
+ // fetch('http://localhost:1234/ecr/upload1', {
  // method: 'POST',
  // body: formData5,
  // })
@@ -968,7 +968,7 @@ try{
 
 
  
-
+ const [errorMessage, setErrorMessage] = useState('');
 
 
  const handleFilePdf = (e) => {
@@ -1032,13 +1032,74 @@ try{
  const partFeed=(e)=>{
   const file = e.target.files[0];
 
- 
-  if (file && file.size > 2 * 1024 * 1024) {
-  alert("Please choose a pdf with a size below 2MB.");
-  e.target.value = null; // Reset the file input
-  return;
+  // Check if file exists
+  if (!file) {
+      return;
   }
-  setPartiFeedback(e.target.files[0])
+
+  // Check if file is a PDF
+  if (file.type !== 'application/pdf') {
+      setErrorMessage("Please choose a PDF file.");
+      e.target.value = null; // Reset the file input
+      return;
+  }
+
+  // Check file size
+  if (file.size > 2 * 1024 * 1024) { // Above 2 MB
+      setErrorMessage("File size exceeds 2 MB.");
+      e.target.value = null; // Reset the file input
+      return;
+  }
+
+  // Load PDF file to get its properties
+  const reader = new FileReader();
+  reader.onload = function (event) {
+      const arrayBuffer = event.target.result;
+      const typedArray = new Uint8Array(arrayBuffer);
+      const pdfBlob = new Blob([typedArray], { type: 'application/pdf' });
+      const url = URL.createObjectURL(pdfBlob);
+
+      // Create a dummy <object> element to read the PDF metadata
+      const pdfViewer = document.createElement('object');
+      pdfViewer.data = url;
+      pdfViewer.type = 'application/pdf';
+      pdfViewer.width = 0; // Hide the element
+      pdfViewer.height = 0;
+      pdfViewer.onload = function () {
+          // Access the dimensions of the first page
+          const pageWidth = pdfViewer.contentDocument.body.scrollWidth;
+          const pageHeight = pdfViewer.contentDocument.body.scrollHeight;
+
+          // Check if the PDF is in portrait orientation and matches A4 dimensions
+          if (pageWidth < pageHeight && Math.abs(pageWidth - 595) < 10 && Math.abs(pageHeight - 842) < 10) { // A4 dimensions with some tolerance
+              // Set the selected PDF file
+              setPartiFeedback(file);
+              // Clear any previous error message
+              setErrorMessage('');
+              alert("PDF is in portrait orientation and matches A4 dimensions.");
+          } else {
+              setErrorMessage("PDF is not in portrait orientation or does not match A4 dimensions.");
+              // Reset the file input
+              e.target.value = null;
+              alert("PDF is not in portrait orientation or does not match A4 dimensions.");
+          }
+          // Clean up
+          URL.revokeObjectURL(url);
+          pdfViewer.remove();
+      };
+
+      // Append the <object> element to the document to trigger loading
+      document.body.appendChild(pdfViewer);
+  };
+  reader.readAsArrayBuffer(file);
+
+ 
+  // if (file && file.size > 2 * 1024 * 1024) {
+  // alert("Please choose a pdf with a size below 2MB.");
+  // e.target.value = null; // Reset the file input
+  // return;
+  // }
+  // setPartiFeedback(e.target.files[0])
  }
  const resPro=(e)=>{
   const file = e.target.files[0];
